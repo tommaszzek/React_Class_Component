@@ -1,17 +1,59 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './component/App';
+import Form from './component/forma';
+import Filtr from './component/fil';
+import ListItems from './component/ListItems'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />
+//     <Form/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+
+
+const data = {
+  users: [
+    {
+      id: 1,
+      age: 29,
+      name: "Arek",
+      sex: "male",
+    },
+    {
+      id: 2,
+      age: 49,
+      name: "Marta",
+      sex: "female",
+    },
+    {
+      id: 3,
+      age: 19,
+      name: "Stasia",
+      sex: "female",
+    },
+    {
+      id: 4,
+      age: 24,
+      name: "Karol",
+      sex: "male",
+    }
+  ]
+}
+
+
+const root=ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+
+<>
+<App/>
+<Form/>
+<Filtr data={data}/>
+<ListItems/>
+</>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
